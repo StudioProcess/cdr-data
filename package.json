@@ -1,0 +1,21 @@
+{
+  "name": "cdr-data",
+  "version": "0.1.0",
+  "description": "Data for Circular Design Rules Tool",
+  "private": true,
+  "scripts": {
+    "test": "tap",
+    "start": "npm test"
+  },
+  "keywords": [],
+  "author": "Martin Grödl <martin@process.studio> (https://process.studio)",
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": "^18.17.1",
+    "npm": "^10.1.0"
+  },
+  "devDependencies": {
+    "tap": "^16.3.8",
+    "node-html-parser": "^6.1.9"
+  }
+}
