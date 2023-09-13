@@ -14,35 +14,35 @@
     * There are 9 (Circular Design) Rules: M1, M2, M3, C1, C2, C3, S1, S2, S3
     * The 9 Rules are organized in 3 Categories (3 rules each): M (Materials), C (Components), S (Services)
     * Each Category has a graphical symbol: M = Triangle, C = Diamond, S = Pentagon
-    * Each Rule has 3 Questions, which are answered Yes or No
+    * Each Rule has 3 Questions, which are answered Yes or No.
     
     Process:
-    1) User picks next Category from the ones that haven't been picked e.g. M
-        2) Get next rule of the chosen category in order: e.g. M1, M2, M3
+    1) User picks next Category from the ones that haven't been picked yet (Example: User picks Category M).
+        2) Get next rule of the chosen category in order (Example: M1, M2, M3).
             3) Get next question of the rule in order: 1, 2, 3
-                4) If the question depends on previous questions (see "depends_on" field), and any one of these dependencies was answered No, skip the question. -> Go to 3)
+                4) If the question depends on previous questions (see "depends_on" field), and any one of these dependencies was answered No, skip the question. -> Go to step 3)
                 5) Show the question. User can answer Yes or No. Record the answer.
-                    6) If this is the FIRST question within the rule, the user can click "Skip Rule". In this case the entire rule is skipped and the skipping recorded. -> Go to 2)
+                    6) If this is the FIRST question within the rule, the user can click "Skip Rule". In this case the entire rule is skipped and the skipping recorded. -> Go to step 2)
     
     Example Results Record:
     {
         m1: {
-            answers: { 1: 'y', 2: 'n', 3: 'n' },    // Could also use [ 'y', 'n', 'n' ] if preferred
-            score: 1,
+            answers: { 1: 'y', 2: 'n', 3: 'n' },
+            score: 1
         },
         m2: {
-            skipped: true,
+            skipped: true
         },
         m3: {
             answers: { 1: 'n', 2: 'n', 3: '-' },
-            score: 0,
+            score: 0
         },
         ...
     }
         
-    * A score is calculated per rule, and is equal to the number of yes answers i.e. min score = 0, max score = 3.
+    * A score is calculated per rule, and is equal to the number of Yes answers (-> min score = 0, max score = 3).
     * If the rule was skipped there are no 'answers' and 'score' fields, but a 'skipped' field set to true.
-    * If a question was skipped due to a dependency check, the corresponding answer is recorded as '-'
+    * If a question was skipped due to a dependency check, the corresponding answer is recorded as '-'.
     
     Results screen:
     * Shows the scores of the 9 rules as shaded gemetric forms (arranged in a circle):
@@ -53,10 +53,10 @@
         * Score = 3: Black fill.
     * Shows a list of textual results for each rule.
         * For each rule:
-            * If score = 0 for the rule (no questions were answered yes), show the special 'score_zero_text'.
+            * If score = 0 for the rule (no questions were answered Yes), show the special 'score_zero_text'.
             * If the rule was skipped, show the special 'skipped_text'.
             * Otherwise, for each question within the rule:
-                * If the answer was yes:
+                * If the answer was Yes:
                     * If the question has the field 'text_scoring' and it is not empty, show 'text_scoring'
                     * Otherwise show the field 'text'
                     * If the question has a non-empty 'depends_on' field, hide the question texts given by 'depends_on'.
@@ -95,7 +95,7 @@ export default {
                             
                             // This question is only shown if ALL dependencies were answered yes.
                             // On scoring/results screen: If this question was answered yes, show this question, but hide all the dependencies.
-                            // Note: This can also be a comma separated list e.g. "1,2"
+                            // Note: This can also be a comma separated list in case of multiple dependencies e.g. "1,2"
                             "depends_on": "2"
                         }
                     },
@@ -103,7 +103,7 @@ export default {
                     // This text is shown in scoring if all questions were answered no (score = 0).
                     "score_zero_text": "",
                     
-                    // This text is shown in scoring, if the rule was skipped
+                    // This text is shown in scoring, if the rule was skipped.
                     "skipped_text": ""
                 },
                 "m2": {
@@ -196,7 +196,7 @@ export default {
                             "text": "Nutzer*innen werden ermächtigt, selbst <span data-term=\"update\">Updates</span> und <span data-term=\"upgrade\">Upgrades</span> vorzunehmen, indem die <span data-term=\"produktdaten\">Produktdaten</span> zugänglich und <span data-term=\"offen\">offen</span> gestaltet sind.",
                             "depends_on": "1,2",
                             
-                            // This text is shown on the results/score screen instead of "text"
+                            // This is an alternative text to be shown on the results/score screen instead of "text".
                             "text_scoring": "<span data-term=\"update\">Updates</span> und <span data-term=\"upgrade\">Upgrades</span> werden vom Hersteller angeboten und Nutzer*innen werden ermächtigt, selbst welche vorzunehmen, indem die <span data-term=\"produktdaten\">Produktdaten</span> zugänglich und <span data-term=\"offen\">offen</span> gestaltet sind und gängigen Standards verwendet werden."
                         }
                     },
