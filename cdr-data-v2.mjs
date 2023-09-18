@@ -47,10 +47,10 @@
     Results screen:
     * Shows the scores of the 9 rules as shaded gemetric forms (arranged in a circle):
         * Skipped: Dashed outline, no fill.
-        * Score = 0: White fill.
-        * Score = 1: Light gray fill.
-        * Score = 2: Dark gray fill.
-        * Score = 3: Black fill.
+        * Score = 0: No fill (solid outline).
+        * Score = 1: Light gray fill (solid outline).
+        * Score = 2: Dark gray fill (solid outline).
+        * Score = 3: Black fill (solid outline).
     * Shows a list of textual results for each rule.
         * For each rule:
             * If score = 0 for the rule (no questions were answered Yes), show the special 'score_zero_text'.
