@@ -1,6 +1,6 @@
 {
   "name": "cdr-data",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Data for Circular Design Rules Tool",
   "private": true,
   "scripts": {
@@ -18,5 +18,5 @@
     "tap": "^16.3.8",
     "node-html-parser": "^6.1.9"
   },
-  "main": "cdr-data-v2.mjs"
+  "main": "cdr-data-v3.mjs"
 }

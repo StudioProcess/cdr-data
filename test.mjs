@@ -1,7 +1,7 @@
 import t from 'tap';
 import { parse, valid } from 'node-html-parser';
 
-import cdr from "./cdr-data-v2.mjs";
+import cdr from "./cdr-data-v3.mjs";
 
 // console.log(cdr);
 
