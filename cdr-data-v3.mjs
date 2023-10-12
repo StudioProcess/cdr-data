@@ -6,8 +6,7 @@
     2023-10-10
     
     TODO:
-    * Complete links to glossary terms (inside glossary)
-    * Add percentage links
+    * dependencies
     * "score_zero_text" and "skipped_text"
     
     Overview:
@@ -85,13 +84,13 @@ export default {
                     "text": "Design the product out of <span data-term=\"renewable materials\">renewable materials</span> or <span class=\"title\" data-term=\"recyclate\">recyclate</span>",
                     "questions": {
                         "1": {
-                            "text": "The product consists of more than 25% <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
+                            "text": "The product consists of more than <span data-term=\"percentage m1\">25%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
                         },
                         "2": {
-                            "text": "The product consists of more than 50% <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
+                            "text": "The product consists of more than <span data-term=\"percentage m1\">50%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
                         },
                         "3": {
-                            "text": "The product consists of more than 90% <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>.",
+                            "text": "The product consists of more than <span data-term=\"percentage m1\">90%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>.",
                             
                             // This question is only shown if ALL dependencies were answered yes.
                             // On scoring/results screen: If this question was answered yes, show this question, but hide all the dependencies.
@@ -111,14 +110,14 @@ export default {
                     "text": "Design the product out of <span class=\"title\" data-term=\"recyclability\">recyclable</span> or <span data-term=\"biodegradable\">biodegradable</span> materials.",
                     "questions": {
                         "1": {
-                            "text": "More than 25% of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>."
+                            "text": "More than <span data-term=\"percentage m2\">25%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>."
                         },
                         "2": {
-                            "text": "More than 50% of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
+                            "text": "More than <span data-term=\"percentage m2\">50%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
                             "depends_on": "1"
                         },
                         "3": {
-                            "text": "More than 75% of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
+                            "text": "More than <span data-term=\"percentage m2\">75%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
                             "depends_on": "1,2"
                         }
                     },
@@ -133,7 +132,7 @@ export default {
                             "text": "A list of all product materials is available."
                         },
                         "2": {
-                            "text": "The product consists of at least 80% <span data-term=\"simple materials\">simple materials</span>."
+                            "text": "The product consists of at least <span data-term=\"percentage m3\">80%</span> <span data-term=\"simple materials\">simple materials</span>."
                         },
                         "3": {
                             "text": "No <span data-term=\"complex materials\">complex materials</span> are used in the product.",
@@ -313,8 +312,8 @@ export default {
         
         // c1
         "separability": {
-            "title": "separability",
-            "text": "Facilitating rapid and economic separation of whole components for remanufacturing or a manual or automated separation (e.g. shredding) of material flows for high-value recycling are essential prerequisites for a circular economy."
+            "title": "Separability",
+            "text": "Facilitating rapid and economic separation of whole components for remanufacturing or a manual or automated separation (e.g. shredding) of material flows for <span data-term=\"high-value recycling\">high-value</span> recycling are essential prerequisites for a circular economy."
         },
         
         // c2
@@ -340,11 +339,11 @@ export default {
         // s1
         "take-back": {
             "title": "Take-back",
-            "text": "For a circular economy, conventional recycling or incineration must be avoided to the greatest possible extent. A take-back system allows entire components (re-manufacturing) or materials (high-value recycling) to be reintroduced into the production process.\nPlanning reverse logistics is a design challenge: pick-up service, packaging, and environmentally-friendly transport must be taken into account."
+            "text": "For a circular economy, conventional recycling or incineration must be avoided to the greatest possible extent. A take-back system allows entire components (re-manufacturing) or materials (<span data-term=\"high-value recycling\">25%</span>high-value recycling</span>) to be reintroduced into the production process.\nPlanning reverse logistics is a design challenge: pick-up service, packaging, and environmentally-friendly transport must be taken into account."
         },
         "collection": {
             "title": "Collection of recyclable materials",
-            "text": "Local systems for collecting and separating recyclable materials in order to recycle them vary. Collection systems usually incinerate or landfill a large fraction of the materials. See Material."
+            "text": "Local systems for collecting and separating recyclable materials in order to recycle them vary. Collection systems usually incinerate or landfill a large fraction of the materials."
         },
         "incentive systems": {
             "title": "Incentive systems",
@@ -366,7 +365,7 @@ export default {
         },
         "reintroduction": {
             "title": "Reintroduction into the production process",
-            "text": "Materials can be reused at a high quality (“high-value recycling”), or entire components can be reintroduced into the production process via remanufacturing."
+            "text": "Materials can be reused at a high quality (<span data-term=\"high-value recycling\">high-value recycling)</span>, or entire components can be reintroduced into the production process via remanufacturing."
         },
         
         // s3
