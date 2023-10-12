@@ -271,16 +271,19 @@ export default {
         // m1
         "renewable materials": {
             "category": "m",
+            "rule": "m1",
             "title": "Renewable materials",
             "text": "Resources that can regenerate naturally and thus be used sustainably. Example: Wood. Renewable materials become part of the “Biological Cycle” again.",
         },
         "recyclate": {
             "category": "m",
+            "rule": "m1",
             "title": "Recyclate",
             "text": "Materials that can be reused from a recycling process. Example: PET that is recovered from plastic bottles. Recyclable materials should remain in the “Technical Cycle”.",
         },
         "percentage m1": {
             "category": "m",
+            "rule": "m1",
             "title": "Percentage (Recyclate)",
             "text": "The ratio refers to the total material weight of the product. Formula: (renewable material weight + recyclate material weight) / total product weight × 100."
         },
@@ -288,16 +291,19 @@ export default {
         // m2
         "recyclability": {
             "category": "m",
+            "rule": "m2",
             "title": "Recyclability",
             "text": "The capacity of a product to be reused as a secondary material after the recycling process."
         },
         "biodegradable": {
             "category": "m",
+            "rule": "m2",
             "title": "Biodegradable",
             "text": "Materials that can decompose by natural processes without leaving harmful residues in nature. For compostable materials, industrial composting can also be factored into the scoring. In principle, biodegradable materials are preferable when they potentially end up in the environment."
         },
         "percentage m2": {
             "category": "m",
+            "rule": "m2",
             "title": "Percentage (Recyclability)",
             "text": "The data must correspond to the actual material recycling rate! Example: PET bottles can be recycled very effectively, but in Austria they only have a recycling rate of approx. 50%. Due to a lack of efficient recycling processes, many materials are incinerated, landfilled, or recycled at a low quality (see also simple materials).\nWhen a product has an LCA (Life Cycle Assessment), this value can be applied directly. Otherwise, the following formula applies: (recyclable material weight × recycling rate + biodegradable material weight) / total product weight × 100."
         },
@@ -305,16 +311,19 @@ export default {
         // m3
         "simple materials": {
             "category": "m",
+            "rule": "m3",
             "title": "Simple materials",
             "text": "The source material is biological (e.g. wood) or a widely used technical material that can be kept in circulation well and is readily available (e.g. PP, PET, aluminum, steel, copper)."
         },
         "complex materials": {
             "category": "m",
+            "rule": "m3",
             "title": "Complex materials",
             "text": "Examples: alloys, textiles with a blend of synthetic and natural fibers, composites, or materials with surface coatings."
         },
         "percentage m3": {
             "category": "m",
+            "rule": "m3",
             "title": "Percentage (Reduction)",
             "text": "Formula: simple material weight / total product weight × 100."
         },
@@ -322,6 +331,7 @@ export default {
         // c1
         "separability": {
             "category": "c",
+            "rule": "c1",
             "title": "Separability",
             "text": "Facilitating rapid and economic separation of whole components for remanufacturing or a manual or automated separation (e.g. shredding) of material flows for <span data-term=\"high-value recycling\">high-value</span> recycling are essential prerequisites for a circular economy."
         },
@@ -329,11 +339,13 @@ export default {
         // c2
         "functional units": {
             "category": "c",
+            "rule": "c2",
             "title": "Functional units",
             "text": "Separate designs facilitate both material and functional optimization. Different lifespans of the components should be avoided! Example: a mattress with different additively designed functions (surface, upholstery, springs)."
         },
         "modular": {
             "category": "c",
+            "rule": "c2",
             "title": "modular",
             "text": ""
         },
@@ -341,11 +353,13 @@ export default {
         // c3
         "update": {
             "category": "c",
+            "rule": "c3",
             "title": "Update",
             "text": "Corrections, improvements, or new information for a product to optimize stability and functionality or to fix defects. Example: Fashion customization, such as changeable covers."
         },
         "upgrade": {
             "category": "c",
+            "rule": "c3",
             "title": "Upgrade",
             "text": "Upgrading or improving a product to provide better performance or additional features. Examples: An office chair can be retrofitted with an armrest. A camera component of a cell phone can be replaced with a better module."
         },
@@ -353,16 +367,19 @@ export default {
         // s1
         "take-back": {
             "category": "s",
+            "rule": "s1",
             "title": "Take-back",
             "text": "For a circular economy, conventional recycling or incineration must be avoided to the greatest possible extent. A take-back system allows entire components (re-manufacturing) or materials (<span data-term=\"high-value recycling\">25%</span>high-value recycling</span>) to be reintroduced into the production process.\nPlanning reverse logistics is a design challenge: pick-up service, packaging, and environmentally-friendly transport must be taken into account."
         },
         "collection": {
             "category": "s",
+            "rule": "s1",
             "title": "Collection of recyclable materials",
             "text": "Local systems for collecting and separating recyclable materials in order to recycle them vary. Collection systems usually incinerate or landfill a large fraction of the materials."
         },
         "incentive systems": {
             "category": "s",
+            "rule": "s1",
             "title": "Incentive systems",
             "text": "Incentives intended to motivate users to perform certain actions, behaviors, or achieve certain goals. Examples: free return, deposit, credit on new products, product exchange for new products."
         },
@@ -370,21 +387,25 @@ export default {
         // s2
         "value": {
             "category": "s",
+            "rule": "s2",
             "title": "Value",
             "text": "A circular strategy aims to slow down the cycle in the (post-)use phase and to keep the value of the product, including its components and materials at the <span data-term=\"high-value recycling\">highest level</span> for as long as possible."
         },
         "reuse": {
             "category": "s",
+            "rule": "s2",
             "title": "Reuse",
             "text": "Renewed usage of an existing product. Example: Offering on a secondary market, which increases the probability of an extended service life."
         },
         "high-value recycling": {
             "category": "s",
+            "rule": "s2",
             "title": "High-value recycling",
             "text": "Materials can be reused at a high quality, or entire components can be reintroduced into the production process via remanufacturing."
         },
         "reintroduction": {
             "category": "s",
+            "rule": "s2",
             "title": "Reintroduction into the production process",
             "text": "Materials can be reused at a high quality (<span data-term=\"high-value recycling\">high-value recycling)</span>, or entire components can be reintroduced into the production process via remanufacturing."
         },
@@ -392,16 +413,19 @@ export default {
         // s3
         "guarantee": {
             "category": "s",
+            "rule": "s3",
             "title": "Guarantee",
             "text": "In Austria, there is a two-year legal guarantee on movable goods and three years for immovable goods."
         },
         "service": {
             "category": "s",
+            "rule": "s3",
             "title": "Service",
             "text": "A service provided by the manufacturer or a commissioned service organization to fulfill the needs of users. Example: sharing systems"
         },
         "product use": {
             "category": "s",
+            "rule": "s3",
             "title": "Product use",
             "text": "Example: “Doing laundry” is the use of a washing machine. This service can also be offered as a subscription. The washing machine remains in the possession of the service provider."
         },
