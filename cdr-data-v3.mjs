@@ -87,7 +87,8 @@ export default {
                             "text": "The product consists of more than <span data-term=\"percentage m1\">25%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
                         },
                         "2": {
-                            "text": "The product consists of more than <span data-term=\"percentage m1\">50%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>."
+                            "text": "The product consists of more than <span data-term=\"percentage m1\">50%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>.",
+                            "depends_on": "1"
                         },
                         "3": {
                             "text": "The product consists of more than <span data-term=\"percentage m1\">90%</span> <span data-term=\"recyclate\">recyclate</span> or <span data-term=\"renewable materials\">renewable materials</span>.",
@@ -95,7 +96,7 @@ export default {
                             // This question is only shown if ALL dependencies were answered yes.
                             // On scoring/results screen: If this question was answered yes, show this question, but hide all the dependencies.
                             // Note: This can also be a comma separated list in case of multiple dependencies e.g. "1,2"
-                            "depends_on": "2"
+                            "depends_on": "1,2"
                         }
                     },
                     
@@ -107,7 +108,7 @@ export default {
                 },
                 "m2": {
                     "title": "Recyclability",
-                    "text": "Design the product out of <span class=\"title\" data-term=\"recyclability\">recyclable</span> or <span data-term=\"biodegradable\">biodegradable</span> materials.",
+                    "text": "Design the product out of <span class=\"title\" data-term=\"recyclability\">recyclable</span> or <span data-term=\"biodegradable\">biodegradable</span> materials",
                     "questions": {
                         "1": {
                             "text": "More than <span data-term=\"percentage m2\">25%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>."
@@ -234,7 +235,7 @@ export default {
                             "text": "The <span data-term=\"value\">value</span> of the product is guaranteed over a longer period of time."
                         },
                         "2": {
-                            "text": "Reuse is implemented by the manufacturer itself or by a partner company."
+                            "text": "<span data-term=\"reuse\">Reuse</span> is implemented by the manufacturer itself or by a partner company."
                         },
                         "3": {
                             "text": "The products taken back are <span data-term=\"reintroduction\">reintroduced</span> into the production process.",
