@@ -270,9 +270,10 @@ export default {
     "glossary": {
         // m1
         "renewable materials": {
-            "category": "m",
-            "rule": "m1",
+            "category": "m", // Used to display the appropriate category symbol in front of the glossary entry
+            "rule": "m1", // Currently unused. The rule that contains the first instance of this term
             "title": "Renewable materials",
+            // "text" can contain newlines (\n) and links to other glossary terms (<span> with attribute 'data-term')
             "text": "Resources that can regenerate naturally and thus be used sustainably. Example: Wood. Renewable materials become part of the “Biological Cycle” again.",
         },
         "recyclate": {
