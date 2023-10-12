@@ -6,7 +6,8 @@
     2023-10-10
     
     TODO:
-    * Complete links to glossary terms
+    * Complete links to glossary terms (inside glossary)
+    * Add percentage links
     * "score_zero_text" and "skipped_text"
     
     Overview:
@@ -135,7 +136,7 @@ export default {
                             "text": "The product consists of at least 80% <span data-term=\"simple materials\">simple materials</span>."
                         },
                         "3": {
-                            "text": "No complex materials are used in the product.",
+                            "text": "No <span data-term=\"complex materials\">complex materials</span> are used in the product.",
                             "depends_on": "2"
                         }
                     },
@@ -149,7 +150,7 @@ export default {
             "rules": {
                 "c1": {
                     "title": "Separability",
-                    "text": "Design the <span class=\"title\">separability</span> of the product",
+                    "text": "Design the <span class=\"title\" data-term=\"separability\">separability</span> of the product",
                     "questions": {
                         "1": {
                             "text": "Disassembly instructions are available."
@@ -158,7 +159,7 @@ export default {
                             "text": "The product is designed for quick and easy repair."
                         },
                         "3": {
-                            "text": "The product is optimized for the separation of all recyclables after the use phase.",
+                            "text": "The product is optimized for the <span data-term=\"separability\">separation</span> of all recyclables after the use phase.",
                             "depends_on": "2"
                         }
                     },
@@ -167,13 +168,13 @@ export default {
                 },
                 "c2": {
                     "title": "Modularity",
-                    "text": "Design the product <span class=\"title\">modularly</span>",
+                    "text": "Design the product <span class=\"title\" data-term=\"modular\">modularly</span>",
                     "questions": {
                         "1": {
                             "text": "Individual replacement parts are available."
                         },
                         "2": {
-                            "text": "All functional units are modular and easy to separate."
+                            "text": "All <span data-term=\"functional units\">functional units</span> are <span data-term=\"modular\">modular</span> and easy to separate."
                         },
                         "3": {
                             "text": "Components can be assembled or reassembled into different configurations."
@@ -184,7 +185,7 @@ export default {
                 },
                 "c3": {
                     "title": "Update/Upgrade",
-                    "text": "Design <span class=\"title\">updates and upgrades</span> for the product.",
+                    "text": "Design <span class=\"title\"><span data-term=\"update\">update</span> and <span data-term=\"upgrade\">upgrades</span></span> for the product",
                     "questions": {
                         "1": {
                             "text": "Maintenance measures or instructions are available."
@@ -210,16 +211,16 @@ export default {
             "rules": {
                 "s1": {
                     "title": "Take-back",
-                    "text": "Design the <span class=\"title\">take-back</span> process of the product.",
+                    "text": "Design the <span class=\"title\" data-term=\"take-back\">take-back</span> process of the product",
                     "questions": {
                         "1": {
-                            "text": "The product indicates the recyclable material category for disposal in the existing collection system."
+                            "text": "The product indicates the recyclable material category for disposal in the existing <span data-term=\"collection\">collection system</span>."
                         },
                         "2": {
                             "text": "The manufacturer or partner organizes and offers the product take-back."
                         },
                         "3": {
-                            "text": "There are also incentives for the return of purchased products.",
+                            "text": "There are also <span data-term=\"incentive systems\">incentives</span> for the return of purchased products.",
                             "depends_on": "2"
                         }
                     },
@@ -228,16 +229,16 @@ export default {
                 },
                 "s2": {
                     "title": "Reuse",
-                    "text": "Design the <span class=\"title\">reuse</span> of products.",
+                    "text": "Design the <span class=\"title\" data-term=\"reuse\">reuse</span> of products",
                     "questions": {
                         "1": {
-                            "text": "The value of the product is guaranteed over a longer period of time."
+                            "text": "The <span data-term=\"value\">value</span> of the product is guaranteed over a longer period of time."
                         },
                         "2": {
                             "text": "Reuse is implemented by the manufacturer itself or by a partner company."
                         },
                         "3": {
-                            "text": "The products taken back are reintroduced into the production process.",
+                            "text": "The products taken back are <span data-term=\"reintroduction\">reintroduced</span> into the production process.",
                             "depends_on": "2"
                         }
                     },
@@ -246,16 +247,16 @@ export default {
                 },
                 "s3": {
                     "title": "Service",
-                    "text": "Design the product as a <span class=\"title\">service</span>",
+                    "text": "Design the product as a <span class=\"title\" data-term=\"service\">service</span>",
                     "questions": {
                         "1": {
-                            "text": "The manufacturers guarantee a service life beyond the legal requirements."
+                            "text": "The manufacturers <span data-term=\"guarantee\">guarantee</span> a service life beyond the legal requirements."
                         },
                         "2": {
-                            "text": "The product is designed with service systems."
+                            "text": "The product is designed with <span data-term=\"service\">service</span> systems."
                         },
                         "3": {
-                            "text": "The product is not sold, rather only its use is offered.",
+                            "text": "The product is not sold, rather only its <span data-term=\"product use\">use</span> is offered.",
                             "text_scoring": "",
                             "depends_on": "2"
                         }
@@ -321,8 +322,8 @@ export default {
             "title": "Functional units",
             "text": "Separate designs facilitate both material and functional optimization. Different lifespans of the components should be avoided! Example: a mattress with different additively designed functions (surface, upholstery, springs)."
         },
-        "modularity": {
-            "title": "Modularity",
+        "modular": {
+            "title": "modular",
             "text": ""
         },
         
@@ -353,7 +354,7 @@ export default {
         // s2
         "value": {
             "title": "Value",
-            "text": "A circular strategy aims to slow down the cycle in the (post-)use phase and to keep the value of the product, including its components and materials at the highest level for as long as possible."
+            "text": "A circular strategy aims to slow down the cycle in the (post-)use phase and to keep the value of the product, including its components and materials at the <span data-term=\"high-value recycling\">highest level</span> for as long as possible."
         },
         "reuse": {
             "title": "Reuse",
@@ -377,8 +378,8 @@ export default {
             "title": "Service",
             "text": "A service provided by the manufacturer or a commissioned service organization to fulfill the needs of users. Example: sharing systems"
         },
-        "Product use": {
-            "title": "product use",
+        "product use": {
+            "title": "Product use",
             "text": "Example: “Doing laundry” is the use of a washing machine. This service can also be offered as a subscription. The washing machine remains in the possession of the service provider."
         },
     }

@@ -59,7 +59,7 @@ t.test('rule text spans', t => {
     for (let cat of Object.values(cdr.categories)) {
         for (let rule of Object.values(cat.rules)) {
             for (let q of Object.values(rule.questions)) {
-                // console.log(q);
+                console.log(q);
                 t.ok(valid(q.text));
                 if ('text_scoring' in q) {
                     t.ok(valid(q.text_scoring));
