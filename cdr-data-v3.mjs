@@ -3,11 +3,7 @@
     https://www.idrv.org/cdr/
     https://cdr.tools/
     
-    2023-10-10
-    
-    TODO:
-    * dependencies
-    * "score_zero_text" and "skipped_text"
+    2023-10-13
     
     Overview:
     * There are 9 (Circular Design) Rules: M1, M2, M3, C1, C2, C3, S1, S2, S3
@@ -96,15 +92,15 @@ export default {
                             // This question is only shown if ALL dependencies were answered yes.
                             // On scoring/results screen: If this question was answered yes, show this question, but hide all the dependencies.
                             // Note: This can also be a comma separated list in case of multiple dependencies e.g. "1,2"
-                            "depends_on": "1,2"
+                            "depends_on": "2"
                         }
                     },
                     
                     // This text is shown in scoring if all questions were answered no (score = 0).
-                    "score_zero_text": "",
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of recyclate.",
                     
                     // This text is shown in scoring, if the rule was skipped.
-                    "skipped_text": ""
+                    "skipped_text": "The criteria relating to recyclate are not applicable to this product."
                 },
                 "m2": {
                     "title": "Recyclability",
@@ -118,12 +114,12 @@ export default {
                             "depends_on": "1"
                         },
                         "3": {
-                            "text": "More than <span data-term=\"percentage m2\">75%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
-                            "depends_on": "1,2"
+                            "text": "More than <span data-term=\"percentage m2\">90%</span> of the materials used can actually be <span data-term=\"recyclability\">recycled</span> or are <span data-term=\"biodegradable\">biodegradable</span>.",
+                            "depends_on": "2"
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of recyclability.",
+                    "skipped_text": "The criteria relating to recyclability are not applicable to this product."
                 },
                 "m3": {
                     "title": "Reduction",
@@ -140,8 +136,8 @@ export default {
                             "depends_on": "2"
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of reduction.",
+                    "skipped_text": "The criteria relating to reduction are not applicable to this product."
                 }
             }
         },
@@ -159,12 +155,11 @@ export default {
                             "text": "The product is designed for quick and easy repair."
                         },
                         "3": {
-                            "text": "The product is optimized for the <span data-term=\"separability\">separation</span> of all recyclables after the use phase.",
-                            "depends_on": "2"
+                            "text": "The product is optimized for the <span data-term=\"separability\">separation</span> of all recyclables after the use phase."
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of separability.",
+                    "skipped_text": "The criteria relating to separability are not applicable to this product."
                 },
                 "c2": {
                     "title": "Modularity",
@@ -180,8 +175,8 @@ export default {
                             "text": "Components can be assembled or reassembled into different configurations."
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The criteria relating to modularity are not applicable to this product.",
+                    "skipped_text": "The product does not meet any of the criteria on the subject of modularity."
                 },
                 "c3": {
                     "title": "Update/Upgrade",
@@ -194,15 +189,11 @@ export default {
                             "text": "The product can be improved with measures offered by the manufacturer."
                         },
                         "3": {
-                            "text": "The product can be improved with freely available and documented measures.",
-                            "depends_on": "1,2",
-                            
-                            // This is an alternative text to be shown on the results/score screen instead of "text".
-                            "text_scoring": ""
+                            "text": "The product can be improved with freely available and documented measures."
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of updates and upgrades.",
+                    "skipped_text": "The criteria relating to upgrades and updates are not applicable to this product."
                 }
             }
         },
@@ -221,11 +212,13 @@ export default {
                         },
                         "3": {
                             "text": "There are also <span data-term=\"incentive systems\">incentives</span> for the return of purchased products.",
-                            "depends_on": "2"
+                            "depends_on": "2",
+                            // This is an alternative text to be shown on the results/score screen instead of "text".
+                            "text_scoring": "The manufacturer or partner organizes and offers the product take-back and there are also incentives for the return of purchased products."
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of take-backs.",
+                    "skipped_text": "The criteria relating to take-backs are not applicable to this product."
                 },
                 "s2": {
                     "title": "Reuse",
@@ -235,15 +228,18 @@ export default {
                             "text": "The <span data-term=\"value\">value</span> of the product is guaranteed over a longer period of time."
                         },
                         "2": {
-                            "text": "<span data-term=\"reuse\">Reuse</span> is implemented by the manufacturer itself or by a partner company."
+                            "text": "<span data-term=\"reuse\">Reuse</span> is implemented by the manufacturer itself or by a partner company.",
+                            "depends_on": "1",
+                            "text_scoring": "The value of the product is guaranteed over a longer period of time and reuse is implemented by the manufacturer itself or by a partner company."
                         },
                         "3": {
                             "text": "The products taken back are <span data-term=\"reintroduction\">reintroduced</span> into the production process.",
-                            "depends_on": "2"
+                            "depends_on": "2",
+                            "text_scoring": "The value of the product is guaranteed over a longer period of time, the reuse is implemented by the manufacturer or a partner company, and products taken back are reintroduced into the production process."
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of reuse.",
+                    "skipped_text": "The criteria relating to reuse are not applicable to this product."
                 },
                 "s3": {
                     "title": "Service",
@@ -257,12 +253,11 @@ export default {
                         },
                         "3": {
                             "text": "The product is not sold, rather only its <span data-term=\"product use\">use</span> is offered.",
-                            "text_scoring": "",
                             "depends_on": "2"
                         }
                     },
-                    "score_zero_text": "",
-                    "skipped_text": ""
+                    "score_zero_text": "The product does not meet any of the criteria on the subject of services.",
+                    "skipped_text": "The criteria relating to services are not applicable to this product."
                 }
             }
         },
