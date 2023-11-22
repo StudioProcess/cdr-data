@@ -1,11 +1,12 @@
 {
   "name": "cdr-data",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Data for Circular Design Rules Tool",
   "private": true,
   "scripts": {
     "test": "tap",
-    "start": "npm test"
+    "start": "npm test",
+    "deploy": "node deploy.mjs"
   },
   "keywords": [],
   "author": "Martin Grödl <martin@process.studio> (https://process.studio)",
@@ -15,8 +16,9 @@
     "npm": "^10.1.0"
   },
   "devDependencies": {
-    "tap": "^16.3.8",
-    "node-html-parser": "^6.1.9"
+    "firebase-admin": "^11.11.0",
+    "node-html-parser": "^6.1.9",
+    "tap": "^16.3.8"
   },
-  "main": "cdr-data-v3.mjs"
+  "main": "./cdr-data-v4.mjs"
 }

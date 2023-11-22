@@ -1,9 +1,17 @@
+const data_file = null; // set to null to use main file from package.json
+
+import { readFileSync } from 'node:fs';
 import t from 'tap';
 import { parse, valid } from 'node-html-parser';
 
-import cdr from "./cdr-data-v3.mjs";
+async function get_data(file = null) {
+    if (file === null) {
+        file = JSON.parse(readFileSync('./package.json')).main;
+    }
+    return (await import(file)).default;
+}
 
-// console.log(cdr);
+const cdr = await get_data(data_file);
 
 // structure / completeness
 t.test('structure/completeness', t => {
@@ -19,6 +27,7 @@ t.test('structure/completeness', t => {
             t.ok('questions' in rule);
             t.ok('score_zero_text' in rule);
             t.ok('skipped_text' in rule);
+            t.ok('score_improvement_text' in rule);
             
             t.ok('1' in rule.questions);
             t.ok('2' in rule.questions);
@@ -43,19 +52,29 @@ t.test('glossary completeness', t => {
 });
 
 
-// rule  text spans
+// rule text spans
 t.test('rule text spans', t => {
     for (let cat of Object.values(cdr.categories)) {
         for (let rule of Object.values(cat.rules)) {
             // console.log(rule);
             t.ok(valid(rule.text));
+            
+            if ('score_zero_text' in rule) {
+                t.ok(valid(rule.score_zero_text));
+            }
+            if ('skipped_text' in rule) {
+                t.ok(valid(rule.skipped_text));
+            }
+            if ('score_improvement_text' in rule) {
+                t.ok(valid(rule.score_improvement_text));
+            }
         }
     }
     t.end();
 });
 
 // questions text spans
-t.test('rule text spans', t => {
+t.test('question text spans', t => {
     for (let cat of Object.values(cdr.categories)) {
         for (let rule of Object.values(cat.rules)) {
             for (let q of Object.values(rule.questions)) {

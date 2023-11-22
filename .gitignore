@@ -5,3 +5,5 @@ venv
 .venv
 .nyc_output
 .nova
+keys/*
+!**/.gitkeep
